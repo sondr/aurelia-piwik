@@ -13,7 +13,7 @@ export function configure(config) {
         ea.subscribe('router:navigation:success', () => {
             // The first visited page is logged by the tracking code supplied by piwik.
             if (!firstPage) {
-                window._paq.push(['trackPageView', location.pathname]);
+                window._paq.push(['trackPageView', location.pathname + location.hash]);
             } else {
                 firstPage = false;
             }

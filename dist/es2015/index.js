@@ -11,7 +11,7 @@ export function configure(config) {
     if (window._paq) {
         ea.subscribe('router:navigation:success', () => {
             if (!firstPage) {
-                window._paq.push(['trackPageView', location.pathname]);
+                window._paq.push(['trackPageView', location.pathname + location.hash]);
             } else {
                 firstPage = false;
             }
